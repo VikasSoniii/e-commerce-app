@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.4'
+    id 'io.spring.dependency-management' version '1.1.4'  //This plugin allows Spring Boot to manage the versions of its dependencies (like spring-boot-starter-web) automatically.
+}
+
+group = 'org.sds.sonizone.ecom'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //Exclude Spring Boot’s default Logback
+    /*implementation('org.springframework.boot:spring-boot-starter-web') {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    }
+    //Add Log4j2 Dependencies
+    implementation 'org.springframework.boot:spring-boot-starter-log4j2'*/
+
+    //Add Spring Web - Required
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
