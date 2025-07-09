@@ -1,3 +1,4 @@
 rootProject.name = 'e-commerce-app'
 include 'order-svc'
+include 'payment-svc'
 
