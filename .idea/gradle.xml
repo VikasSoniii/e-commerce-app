@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/order-svc" />
+            <option value="$PROJECT_DIR$/payment-svc" />
           </set>
         </option>
       </GradleProjectSettings>

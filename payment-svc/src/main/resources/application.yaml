@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: PAYMENT-SVC
+
+server:
+  port: 8001
+
