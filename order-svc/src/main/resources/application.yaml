@@ -1,7 +1,30 @@
 spring:
+  datasource:           #H2 DB Connection Details
+    url: jdbc:postgresql://localhost:5432/ecommerce
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect       #org.hibernate.dialect.H2Dialect <-H2 Dialect
+
   application:
     name: ORDER-SVC
 
 server:
   port: 8000
+
+#H2 DB Connection Details
+  #datasource:
+    #url: jdbc:h2:mem:ordersdb
+    #driver-class-name: org.h2.Driver
+    #username: sa
+   # password:
+  #h2:
+    #console:
+      #enabled: true
+      #path: /h2-console
+
 
