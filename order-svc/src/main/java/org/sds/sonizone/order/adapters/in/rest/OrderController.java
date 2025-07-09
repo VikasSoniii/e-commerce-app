@@ -2,12 +2,12 @@ package org.sds.sonizone.order.adapters.in.rest;
 
 import org.sds.sonizone.order.application.OrderService;
 import org.sds.sonizone.order.domain.model.Order;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 import java.util.UUID;
@@ -16,7 +16,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/orders")
 public class OrderController {
-    private static final Logger logger = LoggerFactory.getLogger(OrderController.class);
+    private static final Logger logger = LogManager.getLogger(OrderController.class);
     @Autowired
     private RestTemplate restTemplate;
     private final OrderService orderService;

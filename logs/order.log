@@ -1,0 +1,30 @@
+2025-07-09 16:05:06 INFO  OrderMainApplication:50 - Starting OrderMainApplication using Java 17.0.10 with PID 7956 (C:\Users\Vicky\Downloads\MCS\MCS_App_08Jul2025\order-svc\build\classes\java\main started by Vicky in C:\Users\Vicky\Downloads\MCS\MCS_App_08Jul2025)
+2025-07-09 16:05:06 DEBUG OrderMainApplication:51 - Running with Spring Boot v3.2.4, Spring v6.1.5
+2025-07-09 16:05:06 INFO  OrderMainApplication:654 - No active profile set, falling back to 1 default profile: "default"
+2025-07-09 16:05:08 INFO  RepositoryConfigurationDelegate:139 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-09 16:05:08 INFO  RepositoryConfigurationDelegate:208 - Finished Spring Data repository scanning in 120 ms. Found 1 JPA repository interface.
+2025-07-09 16:05:09 INFO  TomcatWebServer:109 - Tomcat initialized with port 8000 (http)
+2025-07-09 16:05:09 INFO  Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8000"]
+2025-07-09 16:05:09 INFO  StandardService:173 - Starting service [Tomcat]
+2025-07-09 16:05:09 INFO  StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-07-09 16:05:09 INFO  [/]:173 - Initializing Spring embedded WebApplicationContext
+2025-07-09 16:05:09 INFO  ServletWebServerApplicationContext:296 - Root WebApplicationContext: initialization completed in 2889 ms
+2025-07-09 16:05:10 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-09 16:05:10 INFO  Version:44 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-07-09 16:05:10 INFO  RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+2025-07-09 16:05:11 INFO  SpringPersistenceUnitInfo:87 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-09 16:05:11 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2025-07-09 16:05:11 INFO  HikariPool:565 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@674aa626
+2025-07-09 16:05:11 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2025-07-09 16:05:11 WARN  deprecation:153 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-09 16:05:13 INFO  JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-09 16:05:13 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-09 16:05:14 WARN  JpaBaseConfiguration$JpaWebConfiguration:232 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-09 16:05:14 INFO  Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8000"]
+2025-07-09 16:05:14 INFO  TomcatWebServer:241 - Tomcat started on port 8000 (http) with context path ''
+2025-07-09 16:05:14 INFO  OrderMainApplication:56 - Started OrderMainApplication in 8.858 seconds (process running for 10.247)
+2025-07-09 16:05:32 INFO  [/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-09 16:05:32 INFO  DispatcherServlet:532 - Initializing Servlet 'dispatcherServlet'
+2025-07-09 16:05:32 INFO  DispatcherServlet:554 - Completed initialization in 2 ms
+2025-07-09 16:05:37 INFO  OrderController:60 - starts: Sending request to payment service.
+2025-07-09 16:05:38 INFO  OrderController:62 - ends: Received response from payment service: Payment details fetched successfully!
