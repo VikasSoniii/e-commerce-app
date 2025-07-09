@@ -18,7 +18,7 @@
             <AppenderRef ref="FileLogger"/>
         </Root>
 
-        <!-- Log order or payment package at debug -->
+        <!-- Log payment package at debug -->
         <Logger name="org.sds.sonizone.payment" level="debug" additivity="false">
             <AppenderRef ref="Console"/>
             <AppenderRef ref="FileLogger"/>

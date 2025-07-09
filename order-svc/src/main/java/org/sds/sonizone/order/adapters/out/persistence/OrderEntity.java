@@ -1,14 +1,12 @@
 package org.sds.sonizone.order.adapters.out.persistence;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.util.UUID;
 
 @Entity
-@Table(name = "orders")
+@Table(name = "orders", uniqueConstraints = {@UniqueConstraint(columnNames = "idempotencyKey")})
 public class OrderEntity {
 
     @Id
@@ -17,6 +15,9 @@ public class OrderEntity {
     private String product;
     private int quantity;
     private LocalDate orderDate;
+
+    @Column(nullable = false, unique = true)
+    private String idempotencyKey;
 
     // Getters and Setters
 
@@ -58,5 +59,13 @@ public class OrderEntity {
 
     public void setOrderDate(LocalDate orderDate) {
         this.orderDate = orderDate;
+    }
+
+    public String getIdempotencyKey() {
+        return idempotencyKey;
+    }
+
+    public void setIdempotencyKey(String idempotencyKey) {
+        this.idempotencyKey = idempotencyKey;
     }
 }
