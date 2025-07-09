@@ -11,6 +11,13 @@ repositories {
     mavenCentral()
 }
 
+// Step 1: Remove Spring Boot's default logging    -Add Log4j2
+configurations {
+    all {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    }
+}
+
 dependencies {
     //Add Spring Web - Required
     implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -21,6 +28,12 @@ dependencies {
 
     // H2 in-memory database
     //runtimeOnly 'com.h2database:h2'
+
+    // Step 2: Add Log4j2
+    implementation 'org.springframework.boot:spring-boot-starter-log4j2'
+
+    // Optional: Add JSON support (for structured logging)
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
 
     // PostgreSQL JDBC Driver
     runtimeOnly 'org.postgresql:postgresql'
