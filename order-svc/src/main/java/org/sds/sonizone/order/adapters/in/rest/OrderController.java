@@ -58,7 +58,8 @@ public class OrderController {
     @GetMapping("/callPaymentSvc")
     public ResponseEntity<String> callPaymentService(){
         logger.info("starts: Sending request to payment service.");
-        ResponseEntity<String> response = restTemplate.getForEntity("http://localhost:8001/payment/fetchPaymentData", String.class);
+        //ResponseEntity<String> response = restTemplate.getForEntity("http://localhost:8001/payment/fetchPaymentData", String.class);
+        ResponseEntity<String> response = restTemplate.getForEntity("http://payment-svc/payment/fetchPaymentData", String.class);
         logger.info("ends: Received response from payment service: {}", response.getBody());
         return response;
     }
