@@ -2,7 +2,6 @@ package org.sds.sonizone.order.adapters.out.persistence;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.sds.sonizone.order.adapters.in.rest.OrderController;
 import org.sds.sonizone.order.common.HashUtil;
 import org.sds.sonizone.order.config.OrderMapper;
 import org.sds.sonizone.order.domain.model.Order;

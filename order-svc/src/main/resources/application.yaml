@@ -1,8 +1,8 @@
 spring:
-  datasource:           #H2 DB Connection Details
-    url: jdbc:postgresql://localhost:5432/ecommerce
+  datasource:
+    url: jdbc:postgresql://postgresql-svc:5432/ecommerce        #K8s PostgreSql Service Name
     driver-class-name: org.postgresql.Driver
-    username: postgres
+    username: admin
     password: admin
   jpa:
     hibernate:
