@@ -38,3 +38,27 @@
 2025-07-09 17:02:41 INFO  Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8001"]
 2025-07-09 17:02:41 INFO  TomcatWebServer:241 - Tomcat started on port 8001 (http) with context path ''
 2025-07-09 17:02:41 INFO  PaymentMainApplication:56 - Started PaymentMainApplication in 2.836 seconds (process running for 3.823)
+2025-07-10 15:39:32 INFO  PaymentMainApplication:50 - Starting PaymentMainApplication using Java 17.0.10 with PID 9024 (C:\Users\Vicky\Downloads\MCS\MCS_App_08Jul2025\payment-svc\build\classes\java\main started by Vicky in C:\Users\Vicky\Downloads\MCS\MCS_App_08Jul2025)
+2025-07-10 15:39:32 DEBUG PaymentMainApplication:51 - Running with Spring Boot v3.2.4, Spring v6.1.5
+2025-07-10 15:39:32 INFO  PaymentMainApplication:654 - No active profile set, falling back to 1 default profile: "default"
+2025-07-10 15:39:33 INFO  TomcatWebServer:109 - Tomcat initialized with port 8001 (http)
+2025-07-10 15:39:33 INFO  Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8001"]
+2025-07-10 15:39:33 INFO  StandardService:173 - Starting service [Tomcat]
+2025-07-10 15:39:33 INFO  StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-07-10 15:39:33 INFO  [/]:173 - Initializing Spring embedded WebApplicationContext
+2025-07-10 15:39:33 INFO  ServletWebServerApplicationContext:296 - Root WebApplicationContext: initialization completed in 1063 ms
+2025-07-10 15:39:34 INFO  Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8001"]
+2025-07-10 15:39:34 INFO  TomcatWebServer:241 - Tomcat started on port 8001 (http) with context path ''
+2025-07-10 15:39:34 INFO  PaymentMainApplication:56 - Started PaymentMainApplication in 1.899 seconds (process running for 2.673)
+2025-07-10 16:13:31 INFO  PaymentMainApplication:50 - Starting PaymentMainApplication using Java 17.0.10 with PID 17104 (C:\Users\Vicky\Downloads\MCS\MCS_App_08Jul2025\payment-svc\build\classes\java\main started by Vicky in C:\Users\Vicky\Downloads\MCS\MCS_App_08Jul2025)
+2025-07-10 16:13:31 DEBUG PaymentMainApplication:51 - Running with Spring Boot v3.2.4, Spring v6.1.5
+2025-07-10 16:13:31 INFO  PaymentMainApplication:654 - No active profile set, falling back to 1 default profile: "default"
+2025-07-10 16:13:32 INFO  TomcatWebServer:109 - Tomcat initialized with port 8001 (http)
+2025-07-10 16:13:32 INFO  Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8001"]
+2025-07-10 16:13:33 INFO  StandardService:173 - Starting service [Tomcat]
+2025-07-10 16:13:33 INFO  StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-07-10 16:13:33 INFO  [/]:173 - Initializing Spring embedded WebApplicationContext
+2025-07-10 16:13:33 INFO  ServletWebServerApplicationContext:296 - Root WebApplicationContext: initialization completed in 1078 ms
+2025-07-10 16:13:33 INFO  Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8001"]
+2025-07-10 16:13:33 INFO  TomcatWebServer:241 - Tomcat started on port 8001 (http) with context path ''
+2025-07-10 16:13:33 INFO  PaymentMainApplication:56 - Started PaymentMainApplication in 1.899 seconds (process running for 2.651)

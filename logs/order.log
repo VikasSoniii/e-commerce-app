@@ -106,3 +106,64 @@
 2025-07-09 17:08:20 DEBUG JpaOrderRepository:49 - Order saved successfully with ID: c5b4db6c-c7e4-4bf6-812e-e3ea22f44f76
 2025-07-09 17:08:47 DEBUG JpaOrderRepository:36 - Generated idempotencyKey: WHWF+2E3hLOYVP60vNFnzwdoZjxfwqaieB2y5u3oBp0=
 2025-07-09 17:08:47 INFO  JpaOrderRepository:41 - Duplicate order detected for key: WHWF+2E3hLOYVP60vNFnzwdoZjxfwqaieB2y5u3oBp0=. Returning existing order.
+2025-07-10 15:39:22 INFO  OrderMainApplication:50 - Starting OrderMainApplication using Java 17.0.10 with PID 17416 (C:\Users\Vicky\Downloads\MCS\MCS_App_08Jul2025\order-svc\build\classes\java\main started by Vicky in C:\Users\Vicky\Downloads\MCS\MCS_App_08Jul2025)
+2025-07-10 15:39:22 DEBUG OrderMainApplication:51 - Running with Spring Boot v3.2.4, Spring v6.1.5
+2025-07-10 15:39:22 INFO  OrderMainApplication:654 - No active profile set, falling back to 1 default profile: "default"
+2025-07-10 15:39:23 INFO  RepositoryConfigurationDelegate:139 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-10 15:39:23 INFO  RepositoryConfigurationDelegate:208 - Finished Spring Data repository scanning in 61 ms. Found 1 JPA repository interface.
+2025-07-10 15:39:25 INFO  TomcatWebServer:109 - Tomcat initialized with port 8000 (http)
+2025-07-10 15:39:25 INFO  Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8000"]
+2025-07-10 15:39:25 INFO  StandardService:173 - Starting service [Tomcat]
+2025-07-10 15:39:25 INFO  StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-07-10 15:39:25 INFO  [/]:173 - Initializing Spring embedded WebApplicationContext
+2025-07-10 15:39:25 INFO  ServletWebServerApplicationContext:296 - Root WebApplicationContext: initialization completed in 2271 ms
+2025-07-10 15:39:25 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-10 15:39:25 INFO  Version:44 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-07-10 15:39:25 INFO  RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+2025-07-10 15:39:26 INFO  SpringPersistenceUnitInfo:87 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-10 15:39:26 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2025-07-10 15:39:26 INFO  HikariPool:565 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5a8dcfbb
+2025-07-10 15:39:26 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2025-07-10 15:39:26 WARN  deprecation:153 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-10 15:39:27 INFO  JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-10 15:39:27 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-10 15:39:28 WARN  JpaBaseConfiguration$JpaWebConfiguration:232 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-10 15:39:29 INFO  Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8000"]
+2025-07-10 15:39:29 INFO  TomcatWebServer:241 - Tomcat started on port 8000 (http) with context path ''
+2025-07-10 15:39:29 INFO  OrderMainApplication:56 - Started OrderMainApplication in 6.892 seconds (process running for 8.071)
+2025-07-10 15:39:56 INFO  [/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-10 15:39:56 INFO  DispatcherServlet:532 - Initializing Servlet 'dispatcherServlet'
+2025-07-10 15:39:56 INFO  DispatcherServlet:554 - Completed initialization in 1 ms
+2025-07-10 15:42:12 DEBUG JpaOrderRepository:35 - Generated idempotencyKey: 2zgBLfq2cN1STCn9G6AnI3HmK6APZ1KQA4jpFjP/gb8=
+2025-07-10 15:42:12 INFO  JpaOrderRepository:46 - Saving new order for customer: null, product: Video Game SpiderMan
+2025-07-10 15:42:12 DEBUG JpaOrderRepository:48 - Order saved successfully with ID: 2609cd94-a383-4c6b-a275-e1bda0a89f67
+2025-07-10 16:05:02 WARN  HikariPool:804 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m35s484ms239µs800ns).
+2025-07-10 16:13:23 INFO  OrderMainApplication:50 - Starting OrderMainApplication using Java 17.0.10 with PID 17300 (C:\Users\Vicky\Downloads\MCS\MCS_App_08Jul2025\order-svc\build\classes\java\main started by Vicky in C:\Users\Vicky\Downloads\MCS\MCS_App_08Jul2025)
+2025-07-10 16:13:23 DEBUG OrderMainApplication:51 - Running with Spring Boot v3.2.4, Spring v6.1.5
+2025-07-10 16:13:23 INFO  OrderMainApplication:654 - No active profile set, falling back to 1 default profile: "default"
+2025-07-10 16:13:24 INFO  RepositoryConfigurationDelegate:139 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-10 16:13:24 INFO  RepositoryConfigurationDelegate:208 - Finished Spring Data repository scanning in 67 ms. Found 1 JPA repository interface.
+2025-07-10 16:13:25 INFO  TomcatWebServer:109 - Tomcat initialized with port 8000 (http)
+2025-07-10 16:13:25 INFO  Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8000"]
+2025-07-10 16:13:25 INFO  StandardService:173 - Starting service [Tomcat]
+2025-07-10 16:13:25 INFO  StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-07-10 16:13:25 INFO  [/]:173 - Initializing Spring embedded WebApplicationContext
+2025-07-10 16:13:25 INFO  ServletWebServerApplicationContext:296 - Root WebApplicationContext: initialization completed in 2526 ms
+2025-07-10 16:13:26 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-10 16:13:26 INFO  Version:44 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-07-10 16:13:26 INFO  RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+2025-07-10 16:13:26 INFO  SpringPersistenceUnitInfo:87 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-10 16:13:26 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2025-07-10 16:13:27 INFO  HikariPool:565 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@31b741e2
+2025-07-10 16:13:27 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2025-07-10 16:13:27 WARN  deprecation:153 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-10 16:13:28 INFO  JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-10 16:13:28 INFO  LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-10 16:13:29 WARN  JpaBaseConfiguration$JpaWebConfiguration:232 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-10 16:13:30 INFO  Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8000"]
+2025-07-10 16:13:30 INFO  TomcatWebServer:241 - Tomcat started on port 8000 (http) with context path ''
+2025-07-10 16:13:30 INFO  OrderMainApplication:56 - Started OrderMainApplication in 7.657 seconds (process running for 8.64)
+2025-07-10 16:13:52 INFO  [/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-10 16:13:52 INFO  DispatcherServlet:532 - Initializing Servlet 'dispatcherServlet'
+2025-07-10 16:13:52 INFO  DispatcherServlet:554 - Completed initialization in 1 ms
+2025-07-10 16:28:44 WARN  HikariPool:804 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m16s938ms90µs500ns).
