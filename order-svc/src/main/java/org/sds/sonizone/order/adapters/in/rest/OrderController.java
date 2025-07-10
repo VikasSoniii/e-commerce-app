@@ -1,5 +1,6 @@
 package org.sds.sonizone.order.adapters.in.rest;
 
+import org.sds.sonizone.order.adapters.in.rest.exception.ResourceNotFoundException;
 import org.sds.sonizone.order.application.OrderService;
 import org.sds.sonizone.order.domain.model.Order;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +35,7 @@ public class OrderController {
     public ResponseEntity<Order> getById(@PathVariable UUID id) {
         return orderService.getOrderById(id)
                 .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+                .orElseThrow(()-> new ResourceNotFoundException("Order not found with ID: " + id));
     }
 
     @GetMapping
@@ -46,7 +47,7 @@ public class OrderController {
     public ResponseEntity<Order> update(@PathVariable UUID id, @RequestBody Order order) {
         return orderService.updateOrder(id, order)
                 .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+                .orElseThrow(()-> new ResourceNotFoundException("Order not found with ID: " + id));
     }
 
     @DeleteMapping("/{id}")
@@ -58,8 +59,10 @@ public class OrderController {
     @GetMapping("/callPaymentSvc")
     public ResponseEntity<String> callPaymentService(){
         logger.info("starts: Sending request to payment service.");
-        //ResponseEntity<String> response = restTemplate.getForEntity("http://localhost:8001/payment/fetchPaymentData", String.class);
-        ResponseEntity<String> response = restTemplate.getForEntity("http://payment-svc/payment/fetchPaymentData", String.class);
+        ResponseEntity<String> response = restTemplate.getForEntity("http://localhost:8001/payment/fetchPaymentData", String.class);
+
+        //Used when order-svc,payment-svc deployed in k8s cluster
+        //ResponseEntity<String> response = restTemplate.getForEntity("http://payment-svc/payment/fetchPaymentData", String.class);
         logger.info("ends: Received response from payment service: {}", response.getBody());
         return response;
     }
