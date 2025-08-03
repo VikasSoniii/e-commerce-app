@@ -4,6 +4,7 @@ import org.sds.sonizone.order.adapters.in.rest.exception.ResourceNotFoundExcepti
 import org.sds.sonizone.order.application.OrderService;
 import org.sds.sonizone.order.domain.model.Order;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
@@ -26,8 +27,10 @@ public class OrderController {
         this.orderService = orderService;
     }
 
+
     @PostMapping
     public ResponseEntity<Order> create(@RequestBody Order order) {
+        logger.info("starts: Inside createOrder and request data is: " + order);
         return ResponseEntity.ok(orderService.createOrder(order));
     }
 

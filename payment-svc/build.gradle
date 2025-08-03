@@ -18,9 +18,15 @@ configurations {
     }
 }
 dependencies {
+    //Add common-modules
+    implementation project(':common-module')
+
     //Add Spring Web - Required
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    //Add Kafka Message Queue
+    implementation 'org.springframework.kafka:spring-kafka'   // Producer + Consumer
 
     // Step 2: Add Log4j2
     implementation 'org.springframework.boot:spring-boot-starter-log4j2'

@@ -2,6 +2,22 @@ spring:
   application:
     name: PAYMENT-SVC
 
+  #KAFKA Configuration
+  kafka:
+    auto-offset-reset: earliest
+    bootstrap-servers: localhost:9092  #my-kafka.kafka.svc.cluster.local:9092    #kubernetes config url
+    consumer:
+      group-id: payment-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+order:
+  topic: order-events
+
 server:
   port: 8001
-

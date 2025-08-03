@@ -16,6 +16,16 @@ public class OrderEntity {
     private int quantity;
     private LocalDate orderDate;
 
+    private String status; // PENDING, COMPLETED, CANCELLED
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @Column(nullable = false, unique = true)
     private String idempotencyKey;
 

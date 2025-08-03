@@ -9,6 +9,7 @@ public class OrderMapper {
         e.setProduct(order.getProduct());
         e.setQuantity(order.getQuantity());
         e.setOrderDate(order.getOrderDate());
+        e.setStatus("CREATED");
         return e;
     }
 

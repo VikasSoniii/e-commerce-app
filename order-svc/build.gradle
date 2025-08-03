@@ -19,12 +19,22 @@ configurations {
 }
 
 dependencies {
+    //Add common-modules
+    implementation project(':common-module')
+
     //Add Spring Web - Required
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
     // Spring Data JPA
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    //Add Kafka Message Queue
+    implementation 'org.springframework.kafka:spring-kafka'
+
+    //Add Spring Security, Okta - Okta OAuth2 login
+    //implementation 'com.okta.spring:okta-spring-boot-starter:3.0.6'
+    //implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
 
     // H2 in-memory database
     //runtimeOnly 'com.h2database:h2'

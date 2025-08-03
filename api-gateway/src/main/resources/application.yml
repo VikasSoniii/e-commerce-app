@@ -1,0 +1,35 @@
+#Okta Configuration for API Gateway
+okta:
+  oauth2:
+    issuer: https://integrator-9957757.okta.com/oauth2/default
+    audience: api://default
+    client-id: 0oatqzpi5co360ajB697
+    client-secret: ruyfeRq5i6gJBah2J5TM0Yr0s-3XIAmzC_w2oaxRAsPdU7HuQq3Ru0n6rVi2lry3
+    scopes: openid, profile, email, offline_access
+
+server:
+  port: 5000
+
+spring:
+  application:
+    name: API-GATEWAY
+
+  # Spring Security
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://integrator-9957757.okta.com/oauth2/default
+
+  cloud:
+    gateway:
+      routes:
+        - id: ORDER-SVC
+          uri: http://localhost:8000
+          predicates:
+            - Path=/orders/**
+
+        - id: PAYMENT-SVC
+          uri: http://localhost:8001
+          predicates:
+            - Path=/payments/**

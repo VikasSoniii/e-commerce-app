@@ -1,34 +1,17 @@
-package org.sds.sonizone.order.domain.model;
+package org.sds.sonizone.payment.adapter.in.messaging.events;
 
 import java.time.LocalDate;
 import java.util.UUID;
 
-public class Order {
+public class CreateOrderEvent {
     private UUID id;
     private String customerName;
     private String product;
     private int quantity;
     private LocalDate orderDate;
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    private String status; // PENDING, COMPLETED, CANCELLED
-
     // Constructors, Getters, Setters
-    public Order() {}
-
-    public Order(UUID id, String customerName, String product, int quantity, LocalDate orderDate) {
-        this.id = id;
-        this.customerName = customerName;
-        this.product = product;
-        this.quantity = quantity;
-        this.orderDate = orderDate;
+    public CreateOrderEvent() {
     }
 
     // Getters and Setters
@@ -71,5 +54,6 @@ public class Order {
 
     public void setOrderDate(LocalDate orderDate) {
         this.orderDate = orderDate;
+
     }
 }
