@@ -21,3 +21,9 @@ order:
 
 server:
   port: 8001
+
+#Okta Configuration
+okta:
+  oauth2:
+    issuer: https://integrator-9957757.okta.com/oauth2/default
+    audience: api://default

@@ -6,6 +6,7 @@ import org.sds.sonizone.order.domain.model.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 import org.apache.logging.log4j.LogManager;
@@ -28,6 +29,7 @@ public class OrderController {
     }
 
 
+    //@PreAuthorize("hasAuthority('SCOPE_admin')") //Only Admin can create the Order TODO: NEED TO CHECK
     @PostMapping
     public ResponseEntity<Order> create(@RequestBody Order order) {
         logger.info("starts: Inside createOrder and request data is: " + order);
@@ -62,7 +64,7 @@ public class OrderController {
     @GetMapping("/callPaymentSvc")
     public ResponseEntity<String> callPaymentService(){
         logger.info("starts: Sending request to payment service.");
-        ResponseEntity<String> response = restTemplate.getForEntity("http://localhost:8001/payment/fetchPaymentData", String.class);
+        ResponseEntity<String> response = restTemplate.getForEntity("http://localhost:8001/payments/fetchPaymentData", String.class);
 
         //Used when order-svc,payment-svc deployed in k8s cluster
         //ResponseEntity<String> response = restTemplate.getForEntity("http://payment-svc/payment/fetchPaymentData", String.class);

@@ -1,6 +1,24 @@
 spring:
   application:
     name: ORDER-SVC
+  security:                               #Spring Security - Order also acts as Clients - need Client Config.
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://integrator-9957757.okta.com/oauth2/default
+
+      client: #Order Service also acts as Clients - need Client Config.
+        registration:
+          my-internal-client: # any name
+            provider: okta
+            authorization-grant-type: client_credentials            # Client Config
+            scope: internal                                            #use for internal service communication
+            client-id: 0oatqzpi5co360ajB697
+            client-secret: ruyfeRq5i6gJBah2J5TM0Yr0s-3XIAmzC_w2oaxRAsPdU7HuQq3Ru0n6rVi2lry3
+
+        provider:
+          okta:
+            issuer-uri: https://integrator-9957757.okta.com/oauth2/default
 
   #PostgreSQL Configuration
   datasource:
@@ -34,7 +52,11 @@ order:
 server:
   port: 8000
 
-
+#Okta Configuration
+okta:
+  oauth2:
+    issuer: https://integrator-9957757.okta.com/oauth2/default
+    audience: api://default
 
 
 

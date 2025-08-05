@@ -21,6 +21,10 @@ dependencies {
     //Add common-modules
     implementation project(':common-module')
 
+    //Add Spring Security, Okta - Okta OAuth2 login
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'com.okta.spring:okta-spring-boot-starter:3.0.6'
+
     //Add Spring Web - Required
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
