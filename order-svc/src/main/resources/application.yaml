@@ -1,19 +1,19 @@
 spring:
   application:
     name: ORDER-SVC
-  #Vault Configuration - With Spring Boot 2.4+ and Spring Cloud Vault 3+, using bootstrap.yaml is deprecated in favor of keeping all configuration in application.yaml (or .properties) and using the new Config Data API. You can migrate by moving your Vault config to application.yaml and adding:
-  cloud:
-    vault:
-      uri: http://127.0.0.1:8200                          # Vault server URL
-      #token: hvs.UeRA9uUXVXflT5OGoT9Emxih                 # Use root token only for dev - Added this token in ENV Var for this app
-      #SPRING_CLOUD_VAULT_TOKEN=hvs.UeRA9uUXVXflT5OGoT9Emxih
-      kv:
-        enabled: true
-        backend: secret
-        default-context: ORDER-SVC
-
-  config:
-    import: vault://              # Automatically import secrets from Vault path
+#Vault Configuration - With Spring Boot 2.4+ and Spring Cloud Vault 3+, using bootstrap.yaml is deprecated in favor of keeping all configuration in application.yaml (or .properties) and using the new Config Data API. You can migrate by moving your Vault config to application.yaml and adding:
+#  cloud:
+#    vault:
+#      uri: http://127.0.0.1:8200                          # Vault server URL
+#      #token: hvs.UeRA9uUXVXflT5OGoT9Emxih                 # Use root token only for dev - Added this token in ENV Var for this app
+#      #SPRING_CLOUD_VAULT_TOKEN=hvs.UeRA9uUXVXflT5OGoT9Emxih
+#      kv:
+#        enabled: true
+#        backend: secret
+#        default-context: ORDER-SVC
+#
+#  config:
+#    import: vault://              # Automatically import secrets from Vault path
 
   security:                               #Spring Security - Order also acts as Clients - need Client Config.
     oauth2:
@@ -27,8 +27,8 @@ spring:
             provider: okta
             authorization-grant-type: client_credentials            # Client Config
             scope: internal                                            #use for internal service communication
-            client-id: ${OKTA_CLIENT_ID}
-            client-secret: ${OKTA_CLIENT_SECRET}
+            client-id: 0oatqzpi5co360ajB697                                                         #${OKTA_CLIENT_ID}
+            client-secret: ruyfeRq5i6gJBah2J5TM0Yr0s-3XIAmzC_w2oaxRAsPdU7HuQq3Ru0n6rVi2lry3         #${OKTA_CLIENT_SECRET}
 
         provider:
           okta:
@@ -38,8 +38,8 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/ecommerce
     driver-class-name: org.postgresql.Driver
-    username: ${spring.datasource.username}
-    password: ${spring.datasource.password}
+    username: postgres          #${spring.datasource.username}
+    password: admin             #${spring.datasource.password}
   jpa:
     hibernate:
       ddl-auto: update
