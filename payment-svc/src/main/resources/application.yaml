@@ -2,6 +2,19 @@ spring:
   application:
     name: PAYMENT-SVC
 
+  #Vault Configuration - With Spring Boot 2.4+ and Spring Cloud Vault 3+, using bootstrap.yaml is deprecated in favor of keeping all configuration in application.yaml (or .properties) and using the new Config Data API. You can migrate by moving your Vault config to application.yaml and adding:
+  cloud:
+    vault:
+      uri: http://127.0.0.1:8200                          # Vault server URL
+      #token: hvs.UeRA9uUXVXflT5OGoT9Emxih                # Use root token only for dev - Added this token in ENV Var for this app
+      kv:
+        enabled: true
+        backend: secret
+        default-context: PAYMENT-SVC
+
+  config:
+    import: vault://                                      # Automatically import secrets from Vault path
+
   #KAFKA Configuration
   kafka:
     auto-offset-reset: earliest
@@ -25,5 +38,5 @@ server:
 #Okta Configuration
 okta:
   oauth2:
-    issuer: https://integrator-9957757.okta.com/oauth2/default
+    issuer: ${okta.oauth2.issuer}
     audience: api://default
