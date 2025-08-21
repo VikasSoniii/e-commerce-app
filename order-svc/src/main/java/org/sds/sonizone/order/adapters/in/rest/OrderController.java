@@ -37,10 +37,8 @@ public class OrderController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Order> getById(@PathVariable UUID id) {
-        return orderService.getOrderById(id)
-                .map(ResponseEntity::ok)
-                .orElseThrow(()-> new ResourceNotFoundException("Order not found with ID: " + id));
+    public Order getById(@PathVariable UUID id) {
+        return orderService.getOrderById(id);
     }
 
     @GetMapping
@@ -49,10 +47,8 @@ public class OrderController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Order> update(@PathVariable UUID id, @RequestBody Order order) {
-        return orderService.updateOrder(id, order)
-                .map(ResponseEntity::ok)
-                .orElseThrow(()-> new ResourceNotFoundException("Order not found with ID: " + id));
+    public Order update(@PathVariable UUID id, @RequestBody Order order) {
+        return orderService.updateOrder(id, order);
     }
 
     @DeleteMapping("/{id}")

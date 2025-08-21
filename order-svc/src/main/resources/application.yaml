@@ -1,6 +1,12 @@
 spring:
   application:
     name: ORDER-SVC
+
+#redis configuration
+  redis:
+    host: localhost
+    port: 6379
+
 #Vault Configuration - With Spring Boot 2.4+ and Spring Cloud Vault 3+, using bootstrap.yaml is deprecated in favor of keeping all configuration in application.yaml (or .properties) and using the new Config Data API. You can migrate by moving your Vault config to application.yaml and adding:
 #  cloud:
 #    vault:

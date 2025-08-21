@@ -3,6 +3,7 @@ package org.sds.sonizone.order.domain.model;
 import java.time.LocalDate;
 import java.util.UUID;
 
+
 public class Order {
     private UUID id;
     private String customerName;
