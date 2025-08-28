@@ -1,8 +1,8 @@
 package org.sds.sonizone.order.domain.model;
 
+
 import java.time.LocalDate;
 import java.util.UUID;
-
 
 public class Order {
     private UUID id;
@@ -24,12 +24,13 @@ public class Order {
     // Constructors, Getters, Setters
     public Order() {}
 
-    public Order(UUID id, String customerName, String product, int quantity, LocalDate orderDate) {
+    public Order(UUID id, String customerName, String product, int quantity, LocalDate orderDate, String status) {
         this.id = id;
         this.customerName = customerName;
         this.product = product;
         this.quantity = quantity;
         this.orderDate = orderDate;
+        this.status = status;
     }
 
     // Getters and Setters
@@ -72,5 +73,17 @@ public class Order {
 
     public void setOrderDate(LocalDate orderDate) {
         this.orderDate = orderDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", customerName='" + customerName + '\'' +
+                ", product='" + product + '\'' +
+                ", quantity=" + quantity +
+                ", orderDate=" + orderDate +
+                ", status='" + status + '\'' +
+                '}';
     }
 }

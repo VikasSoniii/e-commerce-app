@@ -1,6 +1,17 @@
 package org.sds.sonizone.order.config;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.cache.RedisCacheConfiguration;
+import org.springframework.data.redis.cache.RedisCacheManager;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
+import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
+import org.springframework.data.redis.serializer.RedisSerializationContext;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
+
+import java.time.Duration;
 
 /*
 That "Cannot serialize" error is coming from Redis because it doesn’t know how to store your Order entity by default.
@@ -96,33 +107,34 @@ text
 exit
 
 
-Clear Redis Cache data:
-> docker exec -it <dapr_redis> redis-cli flushall
+--> Clear Redis Cache data:
+> docker exec -it <dapr_redis> redis-cli flushall     OR   redis-cli flushall
+
+
+--> GET DATA:
+> GET <keys> e.g. GET orders::d734f016-b814-4b76-b994-4ece2969a0af
  */
 @Configuration
 public class RedisConfig {
-    /*@Bean
-    public RedisCacheConfiguration cacheConfiguration(ObjectMapper objectMapper) {
-        return RedisCacheConfiguration.defaultCacheConfig()
-                .serializeValuesWith(RedisSerializationContext.SerializationPair
-                        .fromSerializer(new GenericJackson2JsonRedisSerializer(objectMapper)));
-    }
     @Bean
-    public ObjectMapper objectMapper() {
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.registerModule(new JavaTimeModule());
-        mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+    public RedisCacheManager cacheManager(RedisConnectionFactory connectionFactory) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.registerModule(new JavaTimeModule()); // Support for Java 8+ date/time types
+        objectMapper.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL); // For polymorphism
 
-        // Use a strict polymorphic type validator for security!
-        BasicPolymorphicTypeValidator ptv = BasicPolymorphicTypeValidator.builder()
-                .allowIfSubType("org.sds.sonizone.order.domain.model") // <-- adjust to your package
+        GenericJackson2JsonRedisSerializer serializer =
+                new GenericJackson2JsonRedisSerializer(objectMapper);
+
+        RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig()
+                .entryTtl(Duration.ofHours(1)) // Set cache TTL
+                .disableCachingNullValues()
+                .serializeKeysWith(RedisSerializationContext.SerializationPair
+                        .fromSerializer(new StringRedisSerializer()))
+                .serializeValuesWith(RedisSerializationContext.SerializationPair
+                        .fromSerializer(serializer));
+
+        return RedisCacheManager.builder(connectionFactory)
+                .cacheDefaults(config)
                 .build();
-
-        mapper.activateDefaultTyping(
-                ptv,
-                ObjectMapper.DefaultTyping.NON_FINAL,
-                JsonTypeInfo.As.PROPERTY
-        );
-        return mapper;
-    }*/
+    }
 }

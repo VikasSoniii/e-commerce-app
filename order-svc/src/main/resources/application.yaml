@@ -91,4 +91,9 @@ okta:
       #enabled: true
       #path: /h2-console
 
+logging:
+  level:
+    org.springframework.data.redis.serializer: DEBUG
+    com.fasterxml.jackson.databind: DEBUG
+
 

@@ -19,7 +19,8 @@ public class OrderMapper {
                 e.getCustomerName(),
                 e.getProduct(),
                 e.getQuantity(),
-                e.getOrderDate()
+                e.getOrderDate(),
+                e.getStatus()
         );
     }
 }
