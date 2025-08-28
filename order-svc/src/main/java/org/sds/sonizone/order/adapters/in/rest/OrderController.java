@@ -1,12 +1,11 @@
 package org.sds.sonizone.order.adapters.in.rest;
 
-import org.sds.sonizone.order.adapters.in.rest.exception.ResourceNotFoundException;
+
 import org.sds.sonizone.order.application.OrderService;
 import org.sds.sonizone.order.domain.model.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 import org.apache.logging.log4j.LogManager;
@@ -66,5 +65,10 @@ public class OrderController {
         //ResponseEntity<String> response = restTemplate.getForEntity("http://payment-svc/payment/fetchPaymentData", String.class);
         logger.info("ends: Received response from payment service: {}", response.getBody());
         return response;
+    }
+
+    @PostMapping("/clearCachedData")
+    public String clearCache(){
+        return orderService.clearAllCache();
     }
 }

@@ -80,7 +80,7 @@ public class OrderService {
             @CacheEvict(value = "orders", allEntries = true),
             @CacheEvict(value = "allOrders", allEntries = true) // If you cache getAllOrders
     })
-    public void clearAllCache() {
+    public String clearAllCache() {
         logger.info("Clearing all order caches");
         // This method only clears cache, no DB operation
         // Clear all caches managed by CacheManager
@@ -94,6 +94,7 @@ public class OrderService {
         });
 
         logger.info("All caches cleared successfully");
+        return "All caches cleared successfully";
     }
 
     // Optional: Additional cacheable method for all orders
