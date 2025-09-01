@@ -2,6 +2,13 @@ spring:
   application:
     name: ORDER-SVC
 
+  # Global Spring Retry configuration (can be overridden per method)
+  retry:
+    max-attempts: 3 # Default number of retries
+    backoff:
+      delay: 500 # Initial delay in ms
+      multiplier: 2.0 # multiplier for next retry delay (500, 1000, 2000...)
+
 #redis configuration
   redis:
     host: localhost
@@ -78,7 +85,19 @@ okta:
     issuer: https://integrator-9957757.okta.com/oauth2/default
     audience: api://default
 
-
+#Circuit-Breaker Configuration - Resilience4j
+resilience4j:
+  circuitBreaker:
+    instances:
+      paymentService:
+        register-health-indicator: true
+        sliding-window-type: COUNT_BASED # Or TIME_BASED
+        sliding-window-size: 10 # Number of calls to calculate error rate
+        minimum-number-of-calls: 5 # Min calls before circuit can open
+        failure-rate-threshold: 50 # % of calls that must fail to open the circuit
+        wait-duration-in-open-state: 30s # How long to stay OPEN before switching to HALF-OPEN
+        permitted-number-of-calls-in-half-open-state: 3
+        automatic-transition-from-open-to-half-open-enabled: true #or automated recovery unless business demands operator intervention
 
 #H2 DB Connection Details
   #datasource:

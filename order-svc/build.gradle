@@ -44,6 +44,9 @@ dependencies {
     //Add HashiCorp Vault for Centralized storage
     //implementation 'org.springframework.cloud:spring-cloud-starter-vault-config'
 
+    // Add Circuit-Breaker - Resilience4j dependency
+    implementation 'org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j'
+
     // H2 in-memory database
     //runtimeOnly 'com.h2database:h2'
 
@@ -51,6 +54,9 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-cache'        // Spring cache abstraction
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'   // Redis integration
     implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'   //Add the Jackson JSR-310 Module
+
+    //Added Swagger
+    //implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2'
 
     // Step 2: Add Log4j2
     implementation 'org.springframework.boot:spring-boot-starter-log4j2'
