@@ -39,6 +39,9 @@ dependencies {
     //Add HashiCorp Vault for Centralized storage
     //implementation 'org.springframework.cloud:spring-cloud-starter-vault-config'
 
+    //ADD EUREKA CLIENT DEPENDENCY
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+
     // Spring Data JPA
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 

@@ -41,6 +41,9 @@ dependencies {
     implementation 'com.okta.spring:okta-spring-boot-starter:3.0.6'
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 
+    //ADD EUREKA CLIENT DEPENDENCY
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+
     //Add HashiCorp Vault for Centralized storage
     //implementation 'org.springframework.cloud:spring-cloud-starter-vault-config'
 

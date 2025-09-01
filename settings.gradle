@@ -1,7 +1,8 @@
 rootProject.name = 'e-commerce-app'
-include 'api-gateway'
 include 'common-module'
+include 'eureka-server'
 include 'order-svc'
 include 'payment-svc'
+include 'api-gateway'
 
 

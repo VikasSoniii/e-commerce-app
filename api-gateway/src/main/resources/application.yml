@@ -12,7 +12,7 @@ server:
 
 spring:
   application:
-    name: API-GATEWAY
+    name: api-gateway-service
 
   # Spring Security
   security:
@@ -24,12 +24,27 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: ORDER-SVC
-          uri: http://localhost:8000
+        - id: order-service
+          uri: lb://order-service
           predicates:
             - Path=/orders/**
 
-        - id: PAYMENT-SVC
-          uri: http://localhost:8001
+        - id: payment-service
+          uri: lb://payment-service
           predicates:
             - Path=/payments/**
+      #enables the gateway to route dynamically based on registered service names.
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
+#Add Eureka Server Configuration
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+
+

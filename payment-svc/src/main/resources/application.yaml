@@ -1,6 +1,6 @@
 spring:
   application:
-    name: PAYMENT-SVC
+    name: payment-service
 
 #H2 Configuration
   datasource:
@@ -56,3 +56,11 @@ okta:
   oauth2:
     issuer: https://integrator-9957757.okta.com/oauth2/default      #${okta.oauth2.issuer}
     audience: api://default
+
+#Add Eureka Server Configuration
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true

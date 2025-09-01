@@ -1,6 +1,5 @@
 package org.sds.sonizone.order.adapters.in.rest;
 
-
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.sds.sonizone.order.application.OrderService;
 import org.sds.sonizone.order.domain.model.Order;
@@ -68,10 +67,10 @@ public class OrderController {
                     fallbackMethod = "fallbackPayment")
     @GetMapping("/callPaymentSvc")
     public ResponseEntity<String> callPaymentService(){
-        System.out.println("Attempting to call payment service for order service."); // LOG HERE
+        System.out.println("Attempting to call payment service for order service.");
 
         logger.info("starts: Sending request to payment service.");
-        ResponseEntity<String> response = restTemplate.getForEntity("http://localhost:8001/payments/fetchPaymentData", String.class);
+        ResponseEntity<String> response = restTemplate.getForEntity("http://payment-service/payments/fetchPaymentData", String.class);
 
         //Used when order-svc,payment-svc deployed in k8s cluster
         //ResponseEntity<String> response = restTemplate.getForEntity("http://payment-svc/payment/fetchPaymentData", String.class);

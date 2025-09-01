@@ -2,8 +2,8 @@ package org.sds.sonizone.order.config;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.sds.sonizone.order.adapters.in.rest.OrderController;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
@@ -26,6 +26,7 @@ public class AppConfig {
     @Autowired
     OAuth2AuthorizedClientRepository oAuth2AuthorizedClientRepository;
     @Bean
+    @LoadBalanced                       //This is the KEY annotation that enables Eureka integration
     public RestTemplate getRestTemplate() {
         //return new RestTemplate();
 
